@@ -28,6 +28,10 @@ export const TextInput :FC<TextInputProps> = ({ label, placeholder, value, onCha
     }
   };
 
+  const style = {
+    color: 'red'
+  }
+
   return (
     <div>
       <label htmlFor="textInput">{label}</label>
@@ -38,6 +42,7 @@ export const TextInput :FC<TextInputProps> = ({ label, placeholder, value, onCha
         value={internalValue}
         onChange={handleInputChange}
         onInput={handleInput}
+        style={style}
       />
     </div>
   );
