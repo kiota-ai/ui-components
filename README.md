@@ -22,11 +22,11 @@ El componente `Input` te permite crear campos de entrada personalizables para tu
 Puedes instalar esta librería en tu proyecto utilizando `yarn` o `npm`. Ejecuta el siguiente comando en tu terminal:
 
 ```bash
-yarn add https://github.com/humbertoandueza/ui-react-library-test
+yarn add https://github.com/kiota-ai/ui-components
 ```
 o
 ```bash
-npm install https://github.com/humbertoandueza/ui-react-library-test
+npm install https://github.com/kiota-ai/ui-components
 ```
 
 # Ejemplo Completo
