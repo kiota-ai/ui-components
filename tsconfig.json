@@ -24,10 +24,11 @@
   },
   "include": [
     "src",
-    "src/**/*.@(css)"
+    "src/**/*.@(css)",
   ],
   "exclude": [
-    "src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
+    "src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "src/**/*.test.@(js|jsx|mjs|ts|tsx)",
   ],
   "references": [
     {
