@@ -1,1 +1,7 @@
-export declare const BannerResponsive: () => import("react/jsx-runtime").JSX.Element;
+import { FC } from "react";
+interface BannerResponsiveProps {
+    height: string;
+    backgroundSize: string;
+}
+export declare const BannerResponsive: FC<BannerResponsiveProps>;
+export {};

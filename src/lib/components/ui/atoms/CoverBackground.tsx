@@ -1,5 +1,9 @@
+import { FC } from "react";
 
-export const CoverBackground = ({ link = 'false' }) => {
+interface CoverBackgroundProps {
+  link:string;
+}
+export const CoverBackground:FC<CoverBackgroundProps> = ({ link = 'false' }) => {
   return (
     <div className={`hidden lg:block bg-main`}>
       <div style={{ height: 'calc(100vh - 5rem)' }}>

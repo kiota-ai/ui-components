@@ -1,3 +1,6 @@
-export declare const CoverBackground: ({ link }: {
-    link?: string | undefined;
-}) => import("react/jsx-runtime").JSX.Element;
+import { FC } from "react";
+interface CoverBackgroundProps {
+    link: string;
+}
+export declare const CoverBackground: FC<CoverBackgroundProps>;
+export {};
