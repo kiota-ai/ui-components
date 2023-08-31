@@ -1,0 +1,21 @@
+.customTooltip {
+    background: F8F8F9 !important;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    color: black;
+    border-radius: 0.75rem !important;
+    padding: 1rem !important;
+    opacity: 1 !important;
+}
+.customTooltipColumn {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    background: F8F8F9 !important;
+    color: black;
+    padding: 1rem !important;
+    position: absolute;
+    left: 0 !important;
+    top: 0px !important;
+    height: 100vh !important;
+    width: 300px;
+    margin-top: 0px !important;
+    opacity: 1 !important;
+}
