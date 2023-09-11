@@ -5,10 +5,11 @@ import { Arrow, useLayer } from 'react-laag'
 import { FaSignOutAlt, FaUser } from 'react-icons/fa'
 
 interface PopoverMenuProps {
-  onClick:any
+  onClick:any,
+  items: any[],
 }
 
-export const PopoverMenu:FC<PopoverMenuProps> = ({onClick}) => {
+export const PopoverMenu:FC<PopoverMenuProps> = ({onClick,items}) => {
   const { t } = useTranslation()
   const [isOpen, setOpen] = useState(false)
 
@@ -30,26 +31,16 @@ export const PopoverMenu:FC<PopoverMenuProps> = ({onClick}) => {
   }
 
   const getMenuItems = () => {
-    const sections:any = [{
-      title: 'my_account',
-      icon: <FaUser />,
-      investor: true,
-      founder: true,
-      admin: false,
-      url: '/account'
-    }]
-
-
-    sections.push({
-      title: 'logout',
-      icon: <FaSignOutAlt />,
-      investor: true,
-      founder: true,
-      admin: true,
-      method: () => handleLogout()
-    })
-
-    return sections
+    return [...items,
+      {
+        title: 'logout',
+        icon: <FaSignOutAlt />,
+        investor: true,
+        founder: true,
+        admin: true,
+        method: () => handleLogout()
+      }
+    ]
   }
 
   const { renderLayer, triggerProps, layerProps, arrowProps } = useLayer({

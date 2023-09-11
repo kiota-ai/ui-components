@@ -11,6 +11,8 @@ interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   type: string;
   maxLength?: number;
   required?: boolean;
+  className?: string;
+  labelClassName?: string;
 }
 
 
@@ -22,6 +24,8 @@ export const Input: FC<InputFieldProps> = ({
   type,
   maxLength = 255,
   required = false,
+  className= "shadow-soft-white  bg-input w-full py-3 px-7 mb-2 sm:mb-5 relative z-10 text-left text-xs font-normal rounded-2xl placeholder-gray cursor-pointer transition-all duration-200",
+  labelClassName="font-medium",
   ...inputProps
 }) => {
   const [internalType, setInternalType] = useState(type || 'text')
@@ -30,7 +34,7 @@ export const Input: FC<InputFieldProps> = ({
       {label && (
         <label
           htmlFor={label}
-          className="block mb-1 text-left text-xs font-medium flex"
+          className={`block mb-1 text-left text-xs flex ${labelClassName}`}
         >
           {label}&nbsp;
           {required && (
@@ -46,7 +50,7 @@ export const Input: FC<InputFieldProps> = ({
         maxLength={maxLength}
         placeholder={placeholder}
         required={required}
-        className={`shadow-soft-white border border-gray-lines focus:border-main bg-input w-full py-3 px-7 mb-2 sm:mb-5 relative z-10 text-left text-xs font-normal rounded-2xl placeholder-gray cursor-pointer transition-all duration-200 outline-none hover:border-main hover:outline-none hover:shadow-inner focus:outline-none focus:shadow-focus active:outline-none`}
+        className={`border border-gray-lines focus:border-main bg-input w-full py-3 px-7 mb-2 sm:mb-5 relative z-10 text-left text-xs font-normal rounded-2xl placeholder-gray cursor-pointer transition-all duration-200 outline-none hover:border-main ${className}`}
       />
 
       {type === 'password' && (

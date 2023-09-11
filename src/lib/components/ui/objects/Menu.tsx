@@ -7,11 +7,15 @@ interface MenuProps {
   sections: any[],
   onClick: any;
   activePath: any;
+  logoUrl: string;
+  logoAltUrl:string
 }
  
-export const Menu:FC<MenuProps> = ({sections,onClick, activePath}) => {
+export const Menu:FC<MenuProps> = ({sections,onClick, activePath,logoUrl,logoAltUrl}) => {
   const { t } = useTranslation()
 
+  const logo = logoUrl ? logoUrl : 'https://kiota-public-resources.s3.amazonaws.com/logo_sidebar_000.svg'
+  const logoAlt = logoAltUrl ? logoAltUrl : 'https://kiota-public-resources.s3.amazonaws.com/logo_sidebar_000.svg'
   const onItemClick = (item:any) => {
     onClick(item.url)
   }
@@ -55,10 +59,10 @@ export const Menu:FC<MenuProps> = ({sections,onClick, activePath}) => {
     <div className={`fixed top-0 bg-main h-screen w-20 lg:w-52 z-20`}>
       <div className="menu-logo-container">
         <div className="mt-4 px-4 flex justify-center items-center hidden lg:flex">
-          <img src="https://kiota-public-resources.s3.amazonaws.com/logo_sidebar_000.svg" alt="Kiota Logo" className="object-cover w-full h-full" />
+          <img src={logo} alt="Kiota Logo" className="object-cover w-full h-full" />
         </div>
         <div className="h-12 mt-2 px-2 flex justify-center items-center block lg:hidden">
-          <img src="https://kiota-public-resources.s3.amazonaws.com/logo_sidebar_000.svg" alt="kiota" className="object-cover w-full h-full" />
+          <img src={logoAlt} alt="kiota" className="object-cover w-full h-full" />
         </div>
       </div>
       <UiList className="mt-4 lg:mt-8">{getMenuItems()}</UiList>

@@ -7,6 +7,7 @@ interface ButtonProps {
     icon?: string;
     iconComponent?: React.ReactNode;
     text?: string;
+    className?: string;
     disabled?: boolean;
 }
 export declare const ButtonCardMain: FC<ButtonProps>;

@@ -53,7 +53,7 @@ export const Select:FC<SelectProps> = ({
   onSelect,
   sort,
   required = false,
-  className = '',
+  className = 'shadow-soft-white hover:border-main hover:outline-none hover:shadow-focus focus:outline-none focus:shadow-focus active:outline-none active:shadow-focus',
   disabled = false,
   isClearable = true,
   showQuantity = true,
@@ -155,7 +155,7 @@ export const Select:FC<SelectProps> = ({
   }, [initialValues])
 
   return (
-    <div className={className}>
+    <div>
       <div
         className={'mb-2 sm:mb-5 sm:w-auto outline:none focus:outline-none'}
         onClick={() => !disabled && setOpen(!open)}
@@ -181,9 +181,7 @@ export const Select:FC<SelectProps> = ({
         <div
           className={
             `border border-gray-lines bg-white w-full py-2 sm:py-3 px-7 relative z-1s0 text-left text-xs 
-            font-normal rounded-2xl placeholder-gray ${!disabled && `shadow-soft-white 
-            hover:border-main hover:outline-none hover:shadow-focus focus:outline-none 
-            focus:shadow-focus active:outline-none active:shadow-focus`} cursor-pointer transition-all  
+            font-normal rounded-2xl placeholder-gray ${!disabled && className} cursor-pointer transition-all  
             duration-500 outline-none ${disabled && 'shadow-inner'} ${open && 'shadow-inner'}`
           }
         >

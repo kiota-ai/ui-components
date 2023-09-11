@@ -8,6 +8,7 @@ interface ButtonProps {
   icon?: string;
   iconComponent?: React.ReactNode;
   text?: string;
+  className?: string;
   disabled?: boolean;
 }
 export const ButtonCardMain: FC<ButtonProps> = ({
@@ -18,7 +19,8 @@ export const ButtonCardMain: FC<ButtonProps> = ({
   icon,
   iconComponent,
   text,
-  disabled
+  disabled,
+  className='font-semibold'
 }) => {
   return (
     <button
@@ -27,10 +29,10 @@ export const ButtonCardMain: FC<ButtonProps> = ({
       disabled={disabled}
       className={
         `text-center block w-auto mr-${marginRight} ml-${marginLeft} py-2 px-4
-          text-xs font-semibold text-text-buttons-card-main placeholder-gray bg-bg-buttons-card-main rounded-2xl 
+          text-xs  text-text-buttons-card-main placeholder-gray bg-bg-buttons-card-main rounded-2xl 
           shadow-soft-white cursor-pointer transition-all duration-500 ease-in-out 
           hover:bg-buttons-card-main-hover hover:text-text-buttons-card-main hover:shadow-hover
-          focus:outline-none hover:shadow-inner`
+          focus:outline-none hover:shadow-inner ${className}`
       }
     >
       {icon && (

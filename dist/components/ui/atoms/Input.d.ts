@@ -7,6 +7,8 @@ interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
     type: string;
     maxLength?: number;
     required?: boolean;
+    className?: string;
+    labelClassName?: string;
 }
 export declare const Input: FC<InputFieldProps>;
 export {};
