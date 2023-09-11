@@ -112,10 +112,10 @@ export const Select:FC<SelectProps> = ({
       return false
     }
 
-    if (selection.length !== initialValues.length) {
+    if (selection?.length !== initialValues.length) {
       return true
     } else {
-      for (let i = 0; i < selection.length; i++) {
+      for (let i = 0; i < selection?.length; i++) {
         if (selection[i].id !== initialValues[i].id) {
           return true
         }
@@ -163,7 +163,7 @@ export const Select:FC<SelectProps> = ({
         <label className="block mb-1 text-left text-xs font-medium text-black">
           {label}
           {required && <span className="text-red">&nbsp;*</span>}
-          {multiSelect && showQuantity && haveSelection() && <span>&nbsp;({selection.length})</span>}
+          {multiSelect && showQuantity && haveSelection() && <span>&nbsp;({selection?.length})</span>}
           {(haveSelection() && isClearable) && (
             <span
               data-tip={t('reset')}
@@ -194,7 +194,7 @@ export const Select:FC<SelectProps> = ({
                       <div className="flex">
                         <img src={Sort} alt="Arrow down" className="w-4 mr-1" />
                         <p className='text-xs hidden sm:block'>
-                          {multiSelect ? getPlaceholder() : selection.length ? selection[0].value : getPlaceholder()}
+                          {multiSelect ? getPlaceholder() : selection?.length ? selection[0]?.value : getPlaceholder()}
                         </p>
                       </div>
                       <img src={ArrowUp} alt="Arrow up" className="pl-8" />
@@ -206,11 +206,11 @@ export const Select:FC<SelectProps> = ({
                   <>
                     <div className="flex justify-between items-center bg-white">
                       <div className="flex text-xs">
-                        {!multiSelect && selection.length > 0 && selection[0].image && (
+                        {!multiSelect && selection?.length > 0 && selection[0].image && (
                           <span className="mr-2">{selection[0].image}</span>
                         )}
                         <span>
-                          {multiSelect ? getPlaceholder() : selection.length ? selection[0].value : getPlaceholder()}
+                          {multiSelect ? getPlaceholder() : selection?.length ? selection[0]?.value : getPlaceholder()}
                         </span>
                       </div>
                       <img src={ArrowUp} alt="Arrow up" className="pl-8" />
@@ -228,7 +228,7 @@ export const Select:FC<SelectProps> = ({
                       <div className="flex">
                         <img src={Sort} alt="Arrow down" className="w-4 mr-1" />
                         <p className="text-xs hidden sm:block">
-                          {multiSelect ? getPlaceholder() : selection.length ? selection[0].value : getPlaceholder()}
+                          {multiSelect ? getPlaceholder() : selection?.length ? selection[0]?.value : getPlaceholder()}
                         </p>
                       </div>
                       <img src={ArrowDown} alt="Arrow down" className="pl-8" />
@@ -238,7 +238,7 @@ export const Select:FC<SelectProps> = ({
                     <>
                       <div className="flex text-xs bg-white">
                         <span>
-                          {multiSelect ? getPlaceholder() : selection.length ? selection[0].value : getPlaceholder()}
+                          {multiSelect ? getPlaceholder() : selection?.length ? selection[0]?.value : getPlaceholder()}
                         </span>
                       </div>
 
