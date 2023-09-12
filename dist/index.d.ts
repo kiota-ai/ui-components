@@ -35,3 +35,4 @@ export * from './components/ui/atoms/Tooltip';
 export * from './components/ui/atoms/TextArea';
 export * from './components/ui/molecules/TeammateCard';
 export * from './components/ui/atoms/Autocomplete';
+export * from './components/ui/atoms/GoogleButton';

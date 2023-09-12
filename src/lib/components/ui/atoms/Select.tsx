@@ -41,7 +41,7 @@ interface SelectProps {
 }
 
 
-export const Select:FC<SelectProps> = ({
+export const Select: FC<SelectProps> = ({
   label,
   placeholder,
   reset = false,
@@ -64,10 +64,10 @@ export const Select:FC<SelectProps> = ({
   const [open, setOpen] = useState(false)
   const [selection, setSelection] = useState(initialValues)
 
-  const handleOnClick = (item:any) => {
-    let selectedOptions:any = []
+  const handleOnClick = (item: any) => {
+    let selectedOptions: any = []
 
-    if (!selection.some((current:any) => current.id === item.id)) {
+    if (!selection.some((current: any) => current.id === item.id)) {
       if (!multiSelect) {
         selectedOptions = [item]
       } else if (multiSelect) {
@@ -80,7 +80,7 @@ export const Select:FC<SelectProps> = ({
         return
       }
 
-      selectionAfterRemoval = selectionAfterRemoval.filter((current:any) => current.id !== item.id)
+      selectionAfterRemoval = selectionAfterRemoval.filter((current: any) => current.id !== item.id)
       selectedOptions = [...selectionAfterRemoval]
     }
 
@@ -95,7 +95,7 @@ export const Select:FC<SelectProps> = ({
     }
   }
 
-  const isItemInSelection = (item:any) => selection.some((current:any) => current.id === item.id)
+  const isItemInSelection = (item: any) => selection.some((current: any) => current.id === item.id)
 
   const resetSelection = () => {
     setSelection([])
@@ -194,7 +194,7 @@ export const Select:FC<SelectProps> = ({
                       <div className="flex">
                         <img src={Sort} alt="Arrow down" className="w-4 mr-1" />
                         <p className='text-xs hidden sm:block'>
-                          {multiSelect ? getPlaceholder() : selection?.length ? selection[0]?.value : getPlaceholder()}
+                          {multiSelect ? getPlaceholder() : selection?.length ? selection?.[0]?.value : getPlaceholder()}
                         </p>
                       </div>
                       <img src={ArrowUp} alt="Arrow up" className="pl-8" />
@@ -210,7 +210,7 @@ export const Select:FC<SelectProps> = ({
                           <span className="mr-2">{selection[0].image}</span>
                         )}
                         <span>
-                          {multiSelect ? getPlaceholder() : selection?.length ? selection[0]?.value : getPlaceholder()}
+                          {multiSelect ? getPlaceholder() : selection?.length ? selection?.[0]?.value : getPlaceholder()}
                         </span>
                       </div>
                       <img src={ArrowUp} alt="Arrow up" className="pl-8" />
@@ -228,7 +228,7 @@ export const Select:FC<SelectProps> = ({
                       <div className="flex">
                         <img src={Sort} alt="Arrow down" className="w-4 mr-1" />
                         <p className="text-xs hidden sm:block">
-                          {multiSelect ? getPlaceholder() : selection?.length ? selection[0]?.value : getPlaceholder()}
+                          {multiSelect ? getPlaceholder() : selection?.length ? selection?.[0]?.value : getPlaceholder()}
                         </p>
                       </div>
                       <img src={ArrowDown} alt="Arrow down" className="pl-8" />
@@ -238,7 +238,7 @@ export const Select:FC<SelectProps> = ({
                     <>
                       <div className="flex text-xs bg-white">
                         <span>
-                          {multiSelect ? getPlaceholder() : selection?.length ? selection[0]?.value : getPlaceholder()}
+                          {multiSelect ? getPlaceholder() : selection?.length ? selection?.[0]?.value : getPlaceholder()}
                         </span>
                       </div>
 
