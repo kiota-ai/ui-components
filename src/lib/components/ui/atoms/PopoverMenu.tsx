@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { Arrow, useLayer } from 'react-laag'
 import { FaSignOutAlt, FaUser } from 'react-icons/fa'
 
-interface PopoverMenuProps {
+export interface PopoverMenuProps {
   onClick:any,
   items: any[],
 }

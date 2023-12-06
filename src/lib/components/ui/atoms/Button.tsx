@@ -1,5 +1,5 @@
 import { FC } from "react";
-interface ButtonProps {
+export interface ButtonsProps {
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
   width?: string;
@@ -25,7 +25,7 @@ interface ButtonProps {
   className?: string;
 }
 
-export const Button: FC<ButtonProps> = ({
+export const Button: FC<ButtonsProps> = ({
   onClick,
   type,
   width = 'full',

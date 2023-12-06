@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-interface ButtonProps {
+export interface ButtonCardSecondaryProps {
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
   marginRight?: string;
@@ -11,7 +11,7 @@ interface ButtonProps {
   disabled?: boolean;
 }
 
-export const ButtonCardSecondary: FC<ButtonProps> = ({
+export const ButtonCardSecondary: FC<ButtonCardSecondaryProps> = ({
   onClick,
   type,
   marginRight = '0',

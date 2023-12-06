@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-interface CoverBackgroundProps {
+export interface CoverBackgroundProps {
   link:boolean;
   linkUrl: string;
   linkPreview: string;

@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-interface ButtonProps {
+export interface ButtonSecondaryProps {
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
   marginRight?: string;
@@ -13,7 +13,7 @@ interface ButtonProps {
   width?: string;
   paddingVertical?: string;
 }
-export const ButtonSecondary:FC<ButtonProps> = ({
+export const ButtonSecondary:FC<ButtonSecondaryProps> = ({
   onClick,
   type,
   marginRight = '0',

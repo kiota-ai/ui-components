@@ -4,7 +4,7 @@ import ReactQuill from 'react-quill'
 import QuillToolbar, { formats } from './RichEditorToolbar'
 import { FC } from 'react';
 
-interface RichEditorProps {
+export interface RichEditorProps {
   label: string;
   id: string;
   name: any;
@@ -30,8 +30,8 @@ export const RichEditor: FC<RichEditorProps> = ({
   className,
   toolbarClassName=""
 }) => {
-  const _onChange = (source:any, editor:any) => {
-    onChange && source === 'user' && onChange(editor.getHTML())
+  const _onChange = (_source:any) => {
+    onChange && onChange(_source)
   }
 
   return (
@@ -44,7 +44,7 @@ export const RichEditor: FC<RichEditorProps> = ({
       <QuillToolbar toolbarClassName={toolbarClassName} />
       <ReactQuill
         modules={{ toolbar: `.${toolbarClassName}` }}
-        ref={reference}
+        {...reference}
         id={id}
         value={value}
         defaultValue={value}

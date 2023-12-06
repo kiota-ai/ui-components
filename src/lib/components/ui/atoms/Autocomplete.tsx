@@ -3,10 +3,11 @@
 import React, { FC, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Input } from './Input'
-import { FaTimes } from 'react-icons/fa'
+import { FaCheck, FaTimes } from 'react-icons/fa'
 import ReactTooltip from 'react-tooltip'
+import Avatar from 'react-avatar'
 
-interface SelectProps {
+export interface AutocompleteProps {
   placeholder: string;
   isClearable?: boolean;
   options: any[]; // Reemplaza 'any' con el tipo de dato correcto para tus opciones
@@ -22,9 +23,10 @@ interface SelectProps {
   required?: boolean;
   noOptionsText?: string;
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
+  displayLogo?:boolean
 }
 
-export const Autocomplete:FC<SelectProps> = ({
+export const Autocomplete:FC<AutocompleteProps> = ({
   placeholder,
   isClearable = true,
   options,
@@ -39,6 +41,7 @@ export const Autocomplete:FC<SelectProps> = ({
   displayKey = 'name',
   required = false,
   noOptionsText,
+  displayLogo=false,
   ...inputProps
 }) => {
 
@@ -140,7 +143,7 @@ export const Autocomplete:FC<SelectProps> = ({
 
       <Input
         type="text"
-        reference={reference}
+        {...reference}
         onClick={() => setDisplay(!display)}
         placeholder={placeholder}
         value={(!display && selected ? selected[displayKey] : search) || ''}
@@ -156,8 +159,33 @@ export const Autocomplete:FC<SelectProps> = ({
             {searchResults.length > 0 && (
               searchResults.map((value:any, i:any) => (
                 <ul key={i} tabIndex={0} onClick={() => setItem(value)}>
-                  <li className={`py-1 px-2 font-normal hover:text-main`}>
-                    {displayKey ? value[displayKey] : value[searchKey]}
+                  <li className={`py-1 px-2 font-normal hover:text-main flex justify-between items-center`}>
+                    <div className='flex gap-2 items-center'>
+                      {displayLogo && (
+                        <>
+                        <div style={{height:'25px',width:'25px'}}>
+                          <Avatar
+                            size="25"
+                            src={value['logo']}
+                            name={value['name']}
+                            alt={value['name']}
+                            maxInitials={3}
+                            className={`h-full object-contain ${value['logo'] ? 'w-full' : ''}`}
+                            color="#e0e6f2"
+                            fgColor="#4d70b3"
+                            round="5"
+                          />
+                        </div>
+                        </>
+                      ) 
+                      } 
+                      <span>
+                        {displayKey ? value[displayKey] : value[searchKey]}
+                      </span>
+                    </div>
+                    {
+                     ((selected ?selected?.[displayKey] : '') === value[displayKey]) && (<FaCheck className="text-main"></FaCheck>)
+                    }
                   </li>
                 </ul>
               ))

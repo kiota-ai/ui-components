@@ -22,46 +22,56 @@ El componente `Input` te permite crear campos de entrada personalizables para tu
 Puedes instalar esta librería en tu proyecto utilizando `yarn` o `npm`. Ejecuta el siguiente comando en tu terminal:
 
 ```bash
-yarn add https://github.com/humbertoandueza/ui-react-library-test
+yarn add https://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@github.com/humbertoandueza/ui-react-library-test
 ```
+
 o
+
 ```bash
-npm install https://github.com/humbertoandueza/ui-react-library-test
+npm install https://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@github.com/humbertoandueza/ui-react-library-test
+```
+
+```
+Donde el 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 Es el personal Access Token del usuario de github a quien se le dió acceso a la libreria privada
 ```
 
 # Ejemplo Completo
+
 Aquí tienes un ejemplo completo de cómo puedes utilizar el componente Input en tu aplicación:
 
 ```jsx
 import React, { useState } from "react";
 import { Input } from "ui-components-kiota";
-import 'ui-components-kiota/dist/style.css';
+import "ui-components-kiota/dist/style.css";
 
 function App() {
-  const [inputValue, setInputValue] = useState("");
+	const [inputValue, setInputValue] = useState("");
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
+	const handleInputChange = (event) => {
+		setInputValue(event.target.value);
+	};
 
-  return (
-    <div>
-      <h1>Componente Input</h1>
-      <Input
-        value={inputValue}
-        placeholder="Ingrese un valor"
-        label="Campo de Entrada"
-        onChange={handleInputChange}
-        onInput={(event) => console.log("Entrada de usuario:", event.target.value)}
-      />
-    </div>
-  );
+	return (
+		<div>
+			<h1>Componente Input</h1>
+			<Input
+				value={inputValue}
+				placeholder="Ingrese un valor"
+				label="Campo de Entrada"
+				onChange={handleInputChange}
+				onInput={(event) =>
+					console.log("Entrada de usuario:", event.target.value)
+				}
+			/>
+		</div>
+	);
 }
 
 export default App;
 ```
 
 # Vista Previa en Storybook
+
 Esta librería de componentes también incluye una vista previa en Storybook, que te permite ver y probar los componentes de manera interactiva en un entorno aislado.
 
 Para iniciar Storybook en tu proyecto, ejecuta el siguiente comando:
@@ -69,7 +79,9 @@ Para iniciar Storybook en tu proyecto, ejecuta el siguiente comando:
 ```bash
 yarn storybook
 ```
+
 o
+
 ```bash
 npm run storybook
 ```

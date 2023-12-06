@@ -2,7 +2,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components'
 
-interface ListProps {
+export interface ListProps {
   horizontal?: boolean;
   children: any;
   className: any;

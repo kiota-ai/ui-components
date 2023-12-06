@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-interface ToastContainerProps {
+export interface ToastContainerProps {
   children: React.ReactNode;
 }
 

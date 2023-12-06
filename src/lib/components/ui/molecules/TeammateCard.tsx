@@ -6,7 +6,7 @@ import { ButtonCardMain } from '../atoms/ButtonCardMain'
 import { Card } from '../atoms/Card'
 import { FC } from 'react'
 
-interface TeammateCardProps {
+export interface TeammateCardProps {
   teammate: {
     user?: {
       image?: string;

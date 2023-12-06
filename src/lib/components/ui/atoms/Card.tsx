@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 
-interface CardProps extends React.HTMLProps<HTMLDivElement> {
+export interface CardProps extends React.HTMLProps<HTMLDivElement> {
   id?: string;
   title: string;
   children: React.ReactNode;

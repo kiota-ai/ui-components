@@ -10,7 +10,7 @@ import ScrollContainer from 'react-indiana-drag-scroll'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import { Select } from '../atoms/Select'
 
-interface SectionHeaderProps {
+export interface SectionHeaderProps {
   sectionTitles?: string[];
   sectionKeys?: string[];
   sortItems?: any[];

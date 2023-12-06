@@ -1,7 +1,7 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
-interface NoDataInfoProps {
-  image: string;
+export interface NoDataInfoProps {
+  image: ReactNode | string;
   title: string;
   textOne: string;
   textTwo: string;

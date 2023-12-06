@@ -4,7 +4,7 @@ import { FC, useCallback, useEffect, useRef, useState } from 'react'
 import { ButtonSecondary } from '../atoms/ButtonSecondary';
 import { ButtonDanger } from '../atoms/ButtonDanger';
 
-interface DataGridProps {
+export interface DataGridProps {
   headers?: any[];
   data?: any[];
   actions?: any[];

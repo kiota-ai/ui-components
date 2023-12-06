@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-interface FormProps {
+export interface FormProps {
   formTitle:string;
   formSubtitle:string;
   titleClass: string;

@@ -4,7 +4,7 @@ import { FaTimes } from 'react-icons/fa'
 
 import { FC, useState } from 'react';
 
-interface SidePanelProps {
+export interface SidePanelProps {
   children: React.ReactNode;
   onClose: () => void;
   title: string;
@@ -21,7 +21,7 @@ export const SidePanel:FC<SidePanelProps> = ({ children, onClose, title, width, 
       className="fixed z-50 left-0 top-0 w-screen h-screen bg-gray-opacity side-panel"
     >
       <div
-        className={`fixed top-0 right-0 h-screen mb-16 shadow-soft-white overflow-auto overscroll-y-auto transition ${width && !expand && `w-${width}`} ${expand && 'w-10/12'}`}
+        className={`fixed top-0 right-0 h-screen mb-16 shadow-soft-white overflow-auto overscroll-y-auto transition ${width && !expand && `${width}`} ${expand && 'w-10/12'}`}
         style={{ backgroundColor: "#F8F8F9", animation: 'appearFromRight 0.3s ease-in-out' }}
       >
         <div className={`flex px-4 py-3 bg-main text-white text-lg items-center flex justify-between`}>

@@ -2,7 +2,7 @@
 import React, { FC } from 'react'
 import { Tooltip } from '../atoms/Tooltip'
 
-interface CheckboxProps {
+export interface CheckboxsProps {
   name?: string;
   id?: string;
   reference?: React.Ref<HTMLInputElement>;
@@ -19,7 +19,7 @@ interface CheckboxProps {
   width?: string;
 }
 
-export const Checkbox: FC<CheckboxProps> = ({
+export const Checkbox: FC<CheckboxsProps> = ({
   name,
   id,
   reference,

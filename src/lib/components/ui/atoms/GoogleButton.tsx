@@ -4,7 +4,7 @@ import { GoogleLogin } from 'react-google-login'
 import { useTranslation } from 'react-i18next'
 import { Spinner } from './Spinner'
 
-interface GoogleLoginProps {
+export interface GoogleLoginProps {
   clientId: string;
   onSuccess: () => void;
   onFailure: (error: any) => void;

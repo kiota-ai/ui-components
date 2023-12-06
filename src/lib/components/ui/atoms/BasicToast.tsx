@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { FaCheckCircle, FaInfoCircle, FaTimesCircle } from 'react-icons/fa'
 
-interface AlertProps {
+export interface AlertProps {
   children: React.ReactNode;
   onDismiss: () => void;
   appearance?: 'error' | 'success' | 'alert';

@@ -9,18 +9,18 @@ import { Link } from 'react-router-dom'
 import ReactDOM from 'react-dom'
 import { FaTimes } from 'react-icons/fa'
 
-interface ModalProps {
+export interface ModalProps {
   children: React.ReactNode;
   onClose: () => void;
   showCloseModal?: boolean;
   showModal: boolean;
-  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowModal?: React.Dispatch<React.SetStateAction<boolean>>;
   width?: string;
   height?: string;
   paddingBottom?: string;
   paddingTop?: string;
   px?: string;
-  fixedWidth?: boolean;
+  fixedWidth?: string;
   closeOnClickOutside?: boolean;
 }
 
@@ -85,7 +85,7 @@ export const Modal: FC<ModalProps> = ({
     , document.body)
 }
 
-interface ModalSwalProps {
+export interface ModalSwalProps {
   title: string;
   titleColor?: string;
   text: string;

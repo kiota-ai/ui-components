@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-interface BannerResponsiveProps {
+export interface BannerResponsiveProps {
   height:string;
   backgroundSize:string;
 }

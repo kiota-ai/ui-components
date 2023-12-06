@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FC } from 'react';
 
-interface Errors {
+export interface Errors {
   password_register?: {
     types?: {
       matches?: string;
@@ -10,13 +10,13 @@ interface Errors {
   };
   new_password?: {
     types?: {
-      matches?: boolean;
+      matches?: string;
       min?: string;
     };
   };
 }
 
-interface PasswordRequirementsProps {
+export interface PasswordRequirementsProps {
   errors: Errors;
 }
 

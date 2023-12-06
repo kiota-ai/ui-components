@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { Select } from './Select'
 import React from 'react'
 
-interface PaginationProps {
+export interface PaginationProps {
   showRowsPerPage?: boolean;
   currentPage: number;
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
@@ -128,7 +128,7 @@ export const Pagination: FC<PaginationProps> = ({
               {currentPage + 1 !== pageNumber && (
                 <button
                   onClick={() => setCurrentPage(pageNumber - 1)}
-                  className={`mx-1 px-4 py-2 text-sm font-medium text-mainrounded-xl bg-transparence-blue hover:text-mainhover:shadow-inner`}
+                  className={`mx-1 px-4 py-2 text-sm font-medium text-main rounded-xl bg-transparence-blue hover:text-mainhover:shadow-inner`}
                 >
                   {pageNumber}
                 </button>

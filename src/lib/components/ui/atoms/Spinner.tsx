@@ -1,15 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* import { css } from '@emotion/core' */
 import { FC } from 'react';
 import BeatLoader from 'react-spinners/BeatLoader'
 
-/* const override:any = css`
-  display: block;
-  margin: 0 auto;
-  border-color: #4d70b3;
-` */
 
-interface SpinnerProps {
+export interface SpinnerProps {
   color?: string;
   loading?: boolean;
 }

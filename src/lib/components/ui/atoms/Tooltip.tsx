@@ -4,7 +4,7 @@ import Help from '../../../../assets/images/help_circle_outline.svg'
 import Augmented from '../../../../assets/images/search.svg'
 import './tooltip.css'
 
-interface TooltipProps {
+export interface TooltipProps {
   dataFor?: string;
   infoTootlip?: boolean;
   basicAumented?: boolean;

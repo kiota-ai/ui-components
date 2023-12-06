@@ -3,7 +3,7 @@
 import { FC, useEffect, useRef, useState } from 'react'
 import { FaInfoCircle } from 'react-icons/fa'
 
-interface CheckboxProps {
+export interface CheckboxProps {
   onChange: (event: any) => void;
   checked: boolean;
   text: string;
@@ -12,6 +12,8 @@ interface CheckboxProps {
   textSize?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   tooltip?: boolean;
   disabled?: boolean;
+  noShadow?: boolean;
+  classContentName: string
 }
 
 export const Switch:FC<CheckboxProps> = ({
@@ -22,7 +24,10 @@ export const Switch:FC<CheckboxProps> = ({
   size = 'md',
   textSize = 'sm',
   tooltip = false,
-  disabled = false
+  disabled = false,
+  noShadow = false,
+  classContentName = ''
+
 }) => {
   const [wrapperSizeClass, setWrapperSizeClass] = useState('')
   const [dotSizeClass, setDotSizeClass] = useState('')
@@ -67,19 +72,19 @@ export const Switch:FC<CheckboxProps> = ({
 
   return (
     <>
-      <div className="flex items-center">
+      <div className={`flex items-center ${classContentName}`}>
         <label
           className={`flex items-center ${!disabled && 'cursor-pointer'}`}
           onClick={handleClick}
         >
           <div className="relative">
             <div
-              className={`${isChecked ? `bg-main` : 'bg-gray-light'
-                } ${wrapperSizeClass} rounded-full shadow-inner`}
+              className={`${isChecked ? `bg-main` : noShadow ? 'bg-white' : 'bg-gray-light'
+                } ${wrapperSizeClass} rounded-full  ${noShadow ? 'border' : 'shadow-inner'}`}
             />
             <div
               className={`${isChecked ? 'translate-x-[120%]' : ''
-                } absolute ${dotSizeClass} bg-transparence-blue shadow-inner rounded-full shadow-switch left-2 top-1 transition`}
+                } absolute ${dotSizeClass} bg-transparence-blue  ${noShadow ? '' : 'shadow-inner shadow-switch'}  rounded-full  left-2 top-1 transition`}
             />
           </div>
           {!tooltip && (

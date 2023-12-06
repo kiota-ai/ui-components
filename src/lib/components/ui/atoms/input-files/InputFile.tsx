@@ -7,11 +7,11 @@ import { useDropzone } from 'react-dropzone'
 import { activeStyle, acceptStyle, rejectStyle } from './dropzone-styles'
 import { DocumentIcon } from './DocumentIcon'
 
-interface FileInputProps {
+export interface FileInputProps {
   error: any;
   label: string;
   placeholder: string;
-  selectedFile: File | null;
+  selectedFile: any;
   setSelectedFile: any;
   id: string;
   accept?: any;
@@ -127,7 +127,7 @@ export const InputFile: FC<FileInputProps> = ({
 
               {multiple && (
                 <div className='text-center text-2xl'>
-                  {t('multiple_files', { count: selectedFile.length })}
+                  {t('multiple_files', { count: selectedFile?.length })}
                 </div>
               )}
             </>

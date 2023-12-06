@@ -3,7 +3,7 @@ import { PasswordRequirements } from './PasswordRequirements'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { FC, useState } from 'react'
 
-interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   reference: React.Ref<HTMLInputElement>;
   error?: any;
   label?: string;

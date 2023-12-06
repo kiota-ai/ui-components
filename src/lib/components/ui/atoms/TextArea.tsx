@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 
-interface InputProps {
+export interface InputProps {
   reference?: React.RefObject<any>;
   error?: any;
   label: string;
@@ -20,7 +20,7 @@ export const TextArea:FC<InputProps> = ({
   placeholder,
   rows = 4,
   required = false,
-  className = 'shadow-soft-white  cursor-pointer transition-all duration-200 outline-none hover:border-main hover:outline-none hover:shadow-inner focus:outline-none focus:shadow-focus active:outline-none resize-none',
+  className = 'cursor-pointer transition-all duration-200 outline-none hover:border-main hover:outline-none focus:outline-none focus:shadow-focus active:outline-none resize-none',
   labelClassName="font-medium",
   ...inputProps
 }) => {

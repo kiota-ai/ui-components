@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-interface ButtonProps {
+export interface ButtonDangerProps {
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
   marginRight?: string;
@@ -12,7 +12,7 @@ interface ButtonProps {
   text?: string;
   disabled?: boolean;
 }
-export const ButtonDanger: FC<ButtonProps> = ({
+export const ButtonDanger: FC<ButtonDangerProps> = ({
   onClick,
   type,
   marginRight = '0',

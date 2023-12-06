@@ -13,7 +13,7 @@ import { FaTimes } from 'react-icons/fa'
 
 
 
-interface SelectProps {
+export interface SelectProps {
   label?: string;
   placeholder?: string;
   name?: string;
